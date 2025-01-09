@@ -1,0 +1,15 @@
+# Ouput Time Control File (time in seconds)
+#   iptime
+        -1
+#  strtprt    dprint !General result printing
+       0.0    1800.0
+#   idtime
+        -1
+#  strtdmp    ddumpt !Hydrodynamic Output step
+       0.0    1800.0
+#   idtime
+        -1
+#  strtdmp    ddumpt !Ice Info. Output step
+       0.0    1800.0
+# dtbmforce  dticechg !boom force, ice discharge output step
+     900.0     900.0

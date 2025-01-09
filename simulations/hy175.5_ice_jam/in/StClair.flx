@@ -1,0 +1,17 @@
+# Water Discharge Boundary Condition File
+# jobflx (=1 total discharge; 0 unit discharge)
+         1
+#     nsec    nflxsc(i), i = 1, nsec (nsec: number of boundaries; nflxsc(i):Number of nodes on each bounday)
+         1         9
+#   qwcoef(i), i = 1, nsec
+     1.000
+#     nflx(i), i = 1, nqbn (nflx: node numbers;  nqbn: total number of flux specified nodes)
+      9      8      7      6      5      4      3      2      1
+#    nprof
+        2
+#  flxtime  qbt(j), j = 1, nsec (!! qbt<0: inflow; qbt>0: outflow)
+0     -5000
+99    -5000
+
+
+

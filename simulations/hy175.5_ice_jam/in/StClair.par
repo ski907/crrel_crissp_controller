@@ -1,0 +1,61 @@
+#CRISSP2D Variables Input File
+#Group for solar radiation calculation
+44.73		phid		geographic latitude, + for north, - for south
+4.5		z1		height the wind data is measur ed(m)
+80.0		zh		elevation measured from sea  level(m)
+180.0		alphsd		sun exit angle, 180 for ho rizontal
+0.0		alphrd		sun emision angle, 0 degre e for horizontal
+1380.0		sio		solar constant (W/m^2)
+75.0		alsm		standard longitude, in deg rees
+75.43		allm		local longitude, in  degrees
+-1		etadir		-1, for west longitude; + for east longitude
+0.2		albedo		albedo of ice
+#Group for simulating water temperature and thermal growth and decay of ice
+20.0		hwa		coefficient for linearized heat flux calculation on water-air surface
+12.189		hia		coefficient for linearized heat flux calculation on ice-air surface
+32.547		alp		coefficient for linearized heat flux calculation on ice-air surface
+1448.00  		cwi1		constant for calculating heat transfer coefficient between river water and ice for turbulent flow
+1118.00		ciw1		constant for calculating heat transfer coefficient between river water and ice for supercooled turbulent flow
+2.47		ata		Nusselt number for calculating heat transfer coefficient between river water and ice for laminar flow (2.47 for substrate flow under anchor ice,  and 7.541 for the main channle flow)
+2.24		xki		thermal conductivity of black ice (W/m/oC)
+1.12		xkw		thermal conductivity of white ice(W/m/oC)
+0.3             xks		thermal conductivity of snow(W/m/oC)
+900.0		cwi		heat transfer coefficient from water to ice
+#Group for simulating border ice formation
+-0.5		tc		critical water surface temperature for border ice formation
+0.25		vcrskm		critical velocity above which skim ice will not form (m/s)
+0.4		vcrbom		shore ice accumulation does not occur when average flow velocity exceed this value(m/s)
+1.0		anmaxborder	maximum concentration for border ice formation
+#Group for skim ice simulation
+0.001		hi0		initial skim ice thickness(m)
+1.0		anmaxskim	maximum concentration for skim ice run
+#Group for mass exchange between suspended layer, surface layer and anchor ice
+0.01		hf0		initial thickness of frazil part of ice floes(m)
+0.9		anmaxfra	maximum concentration of frazil ice parcel from suspended layer to surface layer
+1.0e-4		anminfra	minimum concentration of frazil ice parcel from suspended layer to surface layer
+0.4		ef		porosity of frazil ice
+#Group for supercooling simulation
+4.0		vnu		Nusselt number
+2.0e-3		df		length of a-axis of a frazil crystal(m)
+3.0e-4		de		frazil crystal thickness(m)
+0.0		tun		nucleation temperature(oC)
+1.0e-4		ca0		initial surface ice concentratoin
+1.0e-5		cv0		initial suspended frazil concentration
+0.56594		xkwp		thermal conductivity between water and suspended frazil(W/m/oC)
+#Group for anchor ice simulation
+0.4		poran		porosity of anchor ice
+0.001		han0		initial anchor ice thickness(m)
+2650.0		rob		density of bed material(kg/m^3)
+0.8		anmaxanchor	maximum anchor ice concentration
+#Group for undercover transport simulation
+0.01		unpsize		nominal diameter of ice particles(m)
+0.041		unthetac	critical flow strength, below which there is no ice transport
+0.6             unmaxanp	maximum concentration of undercover load
+1.0		unalphav	the ratio of uncover load transportation velocity to flow velocity
+#Group for Hydrodynamic simulation
+0.5		htmin		minimum water depth
+#Group for ice cover formation
+0.0		stpv		ice parcel stoppage criterion
+20.0		crifr		critical Froude number for ice parcel to submerge
+20		ueros		erosion velocity of ice parcels
+0.0		vcrfrz		critical velocity for freezing calculation

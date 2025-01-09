@@ -1,0 +1,9 @@
+# 1) Exclude all .exe or .123 files anywhere in the repo
+*.exe
+*.123
+
+# 2) Inside the `simulations` folder, exclude the *contents* of `out`, `post_process`, `para_dats`.
+#    The pattern `simulations/*/out/*` ignores *all* files in any `out` folder under any subfolder in `simulations`.
+simulations/*/out/*
+simulations/*/post_process/*
+simulations/*/para_dats/*
