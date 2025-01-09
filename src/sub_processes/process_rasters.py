@@ -160,6 +160,8 @@ def generate_tiffs(df, concave_hull, output_folder, var_names=None, resolution=5
             with rasterio.open(out_raster_clipped, "w", **clipped_meta) as dst:
                 dst.write(clipped_data, 1)
 
+        os.remove(out_raster)
+
 
 def main(root_directory):
     # Adjust root_directory to your actual path, e.g., "../../"
