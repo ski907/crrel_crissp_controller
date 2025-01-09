@@ -1,4 +1,5 @@
 import os
+import shutil
 import glob
 import math
 import json
@@ -28,7 +29,7 @@ def get_yaml_config(config_path):
     with open(config_path, 'r') as file:
         return yaml.safe_load(file)
 
-def concave_hull_delaunay(points, max_edge=105):
+def concave_hull_delaunay(points, max_edge=150):
     """
     Creates a 'concave hull' from a set of 2D points by:
       1. Delaunay Triangulation
@@ -191,7 +192,7 @@ def main(root_directory):
     points = list(zip(x, y))
 
     # Concave hull with a max_edge threshold
-    hull = concave_hull_delaunay(points, max_edge=105)
+    hull = concave_hull_delaunay(points, max_edge=150)
 
     # (Optional) Save hull to a GeoJSON for future reference
     hull_file = os.path.join(post_process_dir, "concave_hull.geojson")
@@ -203,9 +204,16 @@ def main(root_directory):
     for plt_path in plt_files:
         # e.g., "StClair001.plt" -> base_name "StClair001"
         base_name = os.path.splitext(os.path.basename(plt_path))[0]
-
-        # Create a subfolder in post_process for each .plt
         subfolder = os.path.join(post_process_dir, base_name)
+
+        # **Delete** the subfolder if it already exists (just that one folder)
+        if os.path.exists(subfolder):
+            try:
+                shutil.rmtree(subfolder)
+            except PermissionError as e:
+                print(f"Error removing '{subfolder}': {e}")
+                raise e  # Or handle gracefully
+
         os.makedirs(subfolder, exist_ok=True)
 
         df = parse_plt(plt_path)
