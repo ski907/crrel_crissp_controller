@@ -7,3 +7,13 @@
 simulations/*/out/*
 simulations/*/post_process/*
 simulations/*/para_dats/*
+
+# Python cache directories and compiled files
+__pycache__/
+*.pyc
+*.pyo
+
+# ... but DO NOT ignore a .gitkeep file (so the directory remains tracked)
+!simulations/*/out/.gitkeep
+!simulations/*/post_process/.gitkeep
+!simulations/*/para_dats/.gitkeep

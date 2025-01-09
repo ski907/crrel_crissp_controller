@@ -225,7 +225,7 @@ animationScene1.GoToLast()
 
 # export view
 #ExportView('C:/Users/RDCRLCSE/Documents/CRISSP2D/trouble_shooting/hy175.5_ice_jam/post_process/centerline_output.csv', view=lineChartView1, RealNumberNotation='Fixed')
-ExportView(sim_folder + '/post_process/centerline_output.csv', view=lineChartView1, RealNumberNotation='Fixed')
+ExportView(sim_folder + '/post_process/centerline_output_last_timestep.csv', view=lineChartView1, RealNumberNotation='Fixed')
 
 # Properties modified on plotData1Display
 plotData1Display.SeriesVisibility = []

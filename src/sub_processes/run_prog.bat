@@ -20,6 +20,7 @@ echo.
 :: Combine ROOT_PATH with SIM_NAME for the full path
 rmdir "%ROOT_PATH%\simulations\%SIM_NAME%\out" /S /Q
 mkdir "%ROOT_PATH%\simulations\%SIM_NAME%\out"
+type NUL > "%ROOT_PATH%\simulations\%SIM_NAME%\out\.gitkeep"
 
 rmdir "%ROOT_PATH%\simulations\%SIM_NAME%\para_dats" /S /Q
 mkdir "%ROOT_PATH%\simulations\%SIM_NAME%\para_dats"
