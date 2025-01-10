@@ -233,6 +233,38 @@ plotData1Display.SeriesVisibility = []
 # Properties modified on plotData1Display
 plotData1Display.SeriesVisibility = ['Bed Elev.', 'W.S.Elev.', 'Bottom of Ice', 'Top of Ice' ]
 
+# create a query selection
+QuerySelect(QueryString='((Node == 129) | (Node == 4129) | (Node == 2731))', FieldType='POINT', InsideOut=0)
+
+# find source
+stClair = FindSource('StClair*')
+
+# set active source
+SetActiveSource(stClair)
+
+# create a new 'Extract Selection'
+extractSelection2 = ExtractSelection(registrationName='ExtractSelection2', Input=stClair)
+
+# get active view
+renderView1 = GetActiveViewOrCreate('RenderView')
+
+# show data in view
+extractSelection2Display = Show(extractSelection2, renderView1, 'UnstructuredGridRepresentation')
+
+# trace defaults for the display properties.
+extractSelection2Display.Representation = 'Points'
+
+# hide data in view
+Hide(stClair, renderView1)
+
+# update the view to ensure updated data information
+renderView1.Update()
+
+
+# Save the extracted selection to a .csv file
+SaveData(sim_folder + '/post_process/extracted_selection_last_timestep.csv', proxy=extractSelection2)
+
+
 # # find source
 # stClair = FindSource('StClair*')
 
