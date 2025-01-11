@@ -205,7 +205,8 @@ def main():
 
     while True:
         sim_name = get_active_sim(root_directory)
-        print(f"\nCurrent Simulation: {sim_name}")
+        file_name = get_active_file_name(root_directory)
+        print(f"\nCurrent Simulation: {sim_name} (File: {file_name})")
         print("Options:")
         print("1. Run active simulation in CRISSP2D")
         print("2. Switch active simulation")

@@ -1,0 +1,13 @@
+# Model Controls / Switches
+# iHydroDynamicSwitch (HydroDynamic Control: 0 - normal; 1 - transitional flow)
+    1
+# iIceDynamicSwitch ( =0 skip ice dynamic model;= 1 - dynamic; = 2 - free drift)
+    1
+# iThermoSwitch ( = 1, with thermal calculation; = 0, no thermal calculation )
+    0
+# iBreakupSwitch (= 1, with breakup calculation; = 0, no breakup calculation )
+    1
+# iUnderCoverTransportSwitch ( = 1, with undercover transport calculation; = 0, no under cover transport calculation )
+    0
+# iAnchorIceSwitch ( = 1, with anchor ice calculation; = 0, no anchor ice)
+    0
