@@ -1,0 +1,7 @@
+#  Simulation Time Control File
+#   Year   Mon  Day  Hour Min  Sec
+    2000    1    1    0    0    0
+#       istrt  endtime(hr)   deltath(s)   deltati(s)
+            1         24.0          2.0          1.0
+#  ticebg(hr)    tintvl(s)
+          0.0        900.0

@@ -1,0 +1,40 @@
+# Information of River Network System & Breakup Controls
+# nrch (total number of reaches/Areas in the River System)
+    7
+# Ice Cover Breakup Controls
+# brktimeinterval (Time Interval in Hours for Water Surface Elevation Records)
+     24.00
+#irch   irefnod(irch) brktim(irch)  brkwse(irch)  brkdwse(irch)  ibrkdti(irch) (Combinations of breakup conditions: brktim, usr specified breakup time; brkwse, H > Hcri;  brkdwse, H(t+dt) > H(t) + DH; ubrkdti, H(t+dt) > H(t) + ti)
+#                    time Ctrl(hr)   WSE Ctrl(m)   DWSE Ctrl(m)  Dti Ctrl(1/0)
+    2      4385            250.00        200.00           10.50           0
+    3      4099            250.00        200.00           10.50           0
+    4      2239            250.00        200.00           10.50           0
+    5       647            250.00        200.00           10.50           0
+    6       325            250.00        200.00           10.50           0
+    7       103            250.00        200.00           10.50           0
+    8        37            250.00        200.00           10.50           0
+# Reach-Reach Relationship (D/S Reaches serial)
+# irch        ndrch(ibr)  idrch(irch,j),(j = 1, ndrch(ibr))
+    2            0            
+    3            1            2
+    4            1            3
+    5            1            4
+    6            1            5
+    7            1            6
+    8            1            7
+# Special Ice Cover Breakup Control
+# nbrkctrl (number of special controls for ice cover breakup)
+    1
+# irch  ndbrkctrl(ibrkctrl) idbrkctrl(irch,j) j = 1, ndbrkctrl(irch)
+    2            0
+# Ice Cover Information
+# ncov (number of reaches with ice cover, = 0, no cover)
+    7
+# irch       ti(irch) (irch: reach nubmer;  ti(irch):thickness of ice cover in the reach irch(m))
+    2          0.30
+    3          0.30
+    4          0.30
+    5          0.30
+    6          0.30
+    7          0.30
+    8          0.30

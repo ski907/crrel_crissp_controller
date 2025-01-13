@@ -59,16 +59,16 @@ def get_active_file_name(root_dir):
     return config.get('active_file_name')
 
 
-def set_active_sim(root_dir, sim_name):
+def set_active_sim(root_dir, sim_name, file_name):
     """
     Set the currently active simulation (`sim_name`) in 'active_sim.yaml'.
     """
     config_path = os.path.join(root_dir, 'active_sim.yaml')
-    config = {'active_sim': sim_name}
+    config = {'active_sim': sim_name, 'active_file_name': file_name}
     write_yaml_config(config_path, config)
 
 
-def switch_simulation(root_dir, sim_name):
+def switch_simulation(root_dir, sim_name, file_name):
     """
     Switch the active simulation by updating 'active_sim.yaml' to `sim_name`.
     Validates that `sim_name` folder exists in 'simulations/' before switching.
@@ -77,7 +77,7 @@ def switch_simulation(root_dir, sim_name):
     if not os.path.exists(sim_folder):
         raise FileNotFoundError(f"Simulation folder {sim_name} does not exist.")
 
-    set_active_sim(root_dir, sim_name)
+    set_active_sim(root_dir, sim_name, file_name)
     print(f"Active simulation switched to '{sim_name}'.")
 
 
@@ -205,7 +205,8 @@ def main():
 
     while True:
         sim_name = get_active_sim(root_directory)
-        print(f"\nCurrent Simulation: {sim_name}")
+        file_name = get_active_file_name(root_directory)
+        print(f"\nCurrent Simulation: {sim_name} (File: {file_name})")
         print("Options:")
         print("1. Run active simulation in CRISSP2D")
         print("2. Switch active simulation")
@@ -223,8 +224,9 @@ def main():
 
         elif choice == '2':
             new_sim_name = input("Enter simulation name to activate: ")
+            new_file_name = input("Enter file name: ")
             try:
-                switch_simulation(root_directory, new_sim_name)
+                switch_simulation(root_directory, new_sim_name, new_file_name)
             except Exception as e:
                 print(f"Error: {e}")
 
